@@ -1,3 +1,14 @@
+var config = {
+	apiKey: "AIzaSyA6Z6gH80A3y4dQnmpvTl4mTdYmT1LHm2M",
+	authDomain: "pinterestclone-24ce7.firebaseapp.com",
+	databaseURL: "https://pinterestclone-24ce7.firebaseio.com",
+	storageBucket: "pinterestclone-24ce7.appspot.com",
+	messagingSenderId: "580484484772"
+};
+firebase.initializeApp(config);
+
+
+
 const app = angular.module('manApp', ['ngRoute', 'angularGrid']);
 
 app.config(function($routeProvider, $locationProvider) {
@@ -33,10 +44,3 @@ app.config(function($routeProvider, $locationProvider) {
 $(document).ready(function() {
 	$(".button-collapse").sideNav();
 })
-
-
-
-
-
-
-
