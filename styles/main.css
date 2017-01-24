@@ -62,3 +62,12 @@ nav .brand-logo img {
     left:65%;
     background-color: maroon;
 }
+
+
+/*****************************************
+              Boards Layout
+******************************************/
+
+.board-card {
+    border-radius: 5px;
+}
