@@ -28,3 +28,14 @@ app.config(function($routeProvider, $locationProvider) {
 	   	redirectTo : '/'
 	   })
 })
+
+$(document).ready(function() {
+	$(".button-collapse").sideNav();
+})
+
+
+
+
+
+
+

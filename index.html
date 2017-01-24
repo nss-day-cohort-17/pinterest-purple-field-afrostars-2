@@ -14,8 +14,16 @@
      - - - - - - - - - - - - - -  -->
     <nav class="grey darken-1" ng-controller="NavCtrl">
       <div class="nav-wrapper">
-        <a href="#/" class="brand-logo"><img src="/img/logo.png"></a>
+        <a href="#/" class="brand-logo hide-on-med-and-down"><img src="/img/logo.png"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#/user/boards">My boards</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <div>
+            <img src="/img/logo.png">
+          </div>
+          <li><a href="#/">Home</a></li>
           <li><a href="#/user/boards">My boards</a></li>
         </ul>
         <form class="grey lighten-1">
