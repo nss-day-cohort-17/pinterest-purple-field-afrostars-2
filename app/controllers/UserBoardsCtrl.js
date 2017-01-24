@@ -1,4 +1,4 @@
-app.controller('UserBoardsCtrl', ($scope, userBoardsFactory) => {
+app.controller('UserBoardsCtrl', function($scope, userBoardsFactory) {
   userBoardsFactory.getBoards()
   .then((val) => {
     $scope.boards = val.title
