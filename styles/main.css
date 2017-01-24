@@ -11,9 +11,14 @@ nav .brand-logo img {
 	max-height: 63px;
 }
 
+<<<<<<< HEAD
 
 /*****************************************
     Main Page and Search Layout
+=======
+/*****************************************
+		Main Page and Search Layout
+>>>>>>> 750007d4c3027643cd27d946781ad5504f79d71f
 ******************************************/
 
 .grid {
@@ -34,7 +39,11 @@ nav .brand-logo img {
     opacity: 0;
     visibility: hidden;
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 750007d4c3027643cd27d946781ad5504f79d71f
 .grid-img.img-loaded{
     visibility: visible;
     opacity: 1;
