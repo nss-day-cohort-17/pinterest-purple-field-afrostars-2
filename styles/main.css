@@ -81,3 +81,22 @@ nav .brand-logo img {
 .modal img {
 	max-width: 100%;
 }
+
+/***************************************
+							Navbar
+***************************************/
+
+.sticky {
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin-bottom: 25px;
+	z-index: 999;
+}
+
+/*********************************
+			MainView in Index.html
+*********************************/
+.mainview {
+	margin-top: 70px;
+}
