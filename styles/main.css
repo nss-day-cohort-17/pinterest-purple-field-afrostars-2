@@ -1,0 +1,12 @@
+/*********************
+ ** Page Layout
+ *********************/
+
+nav form {
+	width: 800px !important;
+	margin-left: 75px;
+}
+
+nav .brand-logo img {
+	max-height: 63px;
+}
