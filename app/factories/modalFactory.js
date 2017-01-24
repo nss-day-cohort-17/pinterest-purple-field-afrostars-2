@@ -1,5 +1,7 @@
 app.factory('modalFactory', function() {
 	var index = ""
+	var currentPin = ""
+
 	setIndex = function(indx) {
 		index = indx
 	}
@@ -7,6 +9,15 @@ app.factory('modalFactory', function() {
 	getIndex = function() {
 		console.log(index)
 		return index
+	}
+
+	// Not currently being used
+	setCurrentPin = function(pin) {
+		currentPin = pin
+	}
+
+	getCurrentPin = function() {
+		return currentPin
 	}
 
 	return {
