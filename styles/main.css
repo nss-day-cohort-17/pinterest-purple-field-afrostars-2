@@ -3,8 +3,9 @@
  *********************/
 
 nav form {
-	width: 800px !important;
+	width: 80% !important;
 	margin-left: 75px;
+	max-height: 90%;
 }
 
 nav .brand-logo img {
