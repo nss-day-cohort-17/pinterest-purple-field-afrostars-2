@@ -73,3 +73,22 @@ nav .brand-logo img {
 .board-card {
     border-radius: 5px;
 }
+
+/***************************************
+							Navbar
+***************************************/
+
+.sticky {
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin-bottom: 25px;
+	z-index: 999;
+}
+
+/*********************************
+			MainView in Index.html
+*********************************/
+.mainview {
+	margin-top: 70px;
+}
