@@ -1,4 +1,4 @@
-const app = angular.module('manApp', ['ngRoute', 'ngMaterial']);
+const app = angular.module('manApp', ['ngRoute', 'angularGrid']);
 
 app.config(function($routeProvider, $locationProvider) {
 	$locationProvider.hashPrefix('')
