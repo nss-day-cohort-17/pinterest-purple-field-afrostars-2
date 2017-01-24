@@ -2,13 +2,13 @@
 	<div class="dynamic-grid" angular-grid="images" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="false">
 		<div class="show-image" ng-repeat="image in images">
 			<a href=""><img ng-if="image.display_sizes[0].uri" src="{{ image.display_sizes[0].uri }}" class="grid-img"></a>
-			<a class="waves-effect waves-light btn">Save</a>
+			<!-- <a class="waves-effect waves-light btn">Save</a> -->
+			<!-- Modal Trigger -->
+			<button class="waves-effect waves-light btn modal-trigger" data-target="modal1">Save</button>
 		</div>
 	</div>
 </div>
 
-<!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
@@ -17,6 +17,6 @@
     <p>A bunch of text</p>
   </div>
   <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
   </div>
 </div>
