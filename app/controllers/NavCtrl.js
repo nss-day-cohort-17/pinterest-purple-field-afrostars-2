@@ -1,3 +1,3 @@
 app.controller('NavCtrl', function($scope) {
-	$scope.myfunction = function() {console.log('hello world')}
+	$scope.myFunction = function() {console.log('hello world')}
 })
