@@ -29,4 +29,13 @@ app.config(function($routeProvider, $locationProvider) {
 	   })
 })
 
+$(document).ready(function() {
+	$(".button-collapse").sideNav();
+})
+
+
+
+
+
+
 
