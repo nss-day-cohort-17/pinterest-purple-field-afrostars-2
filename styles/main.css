@@ -12,6 +12,7 @@ nav .brand-logo img {
 	max-height: 63px;
 }
 
+
 /*****************************************
 		Main Page and Search Layout
 ******************************************/
@@ -34,7 +35,7 @@ nav .brand-logo img {
     opacity: 0;
     visibility: hidden;
 }
- 
+
 .grid-img.img-loaded{
     visibility: visible;
     opacity: 1;
@@ -60,4 +61,13 @@ nav .brand-logo img {
      top:0;
     left:65%;
     background-color: maroon;
+}
+
+
+/*****************************************
+              Boards Layout
+******************************************/
+
+.board-card {
+    border-radius: 5px;
 }
