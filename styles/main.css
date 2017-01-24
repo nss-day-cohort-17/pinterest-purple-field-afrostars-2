@@ -72,4 +72,7 @@ nav .brand-logo img {
 
 .board-card {
     border-radius: 5px;
+    height: 200px;
+    width: 301px;
+    background-color: #efefef;
 }
