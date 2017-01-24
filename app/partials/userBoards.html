@@ -1,12 +1,13 @@
 <div>
   <ul class="row">
     <li class="col s4">
-      <article class="board-card card new-board">
-        <p><a href="#">+ New Board</a></p>
+      <article class="board-card new-board waves-effect">
+        <div class="circle red"></div>
+        <p><a href="#">New Board</a></p>
       </article>
     </li>
     <li ng-repeat="board in boards" class="col s4">
-      <article class="board-card card">
+      <article class="board-card waves-effect">
         <p>{{board.title}}</p>
       </article>
     </li>
