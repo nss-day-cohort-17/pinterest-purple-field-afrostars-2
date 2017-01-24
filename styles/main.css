@@ -73,3 +73,11 @@ nav .brand-logo img {
 .board-card {
     border-radius: 5px;
 }
+
+/*****************************************
+              Modal Layout
+******************************************/
+
+.modal img {
+	max-width: 100%;
+}
