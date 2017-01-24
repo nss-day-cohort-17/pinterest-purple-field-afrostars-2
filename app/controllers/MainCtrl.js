@@ -5,4 +5,8 @@ app.controller('MainCtrl', function($scope, $http) {
 		console.log(val)
 		$scope.images = val.data.images
 	})
+
+	$(document).ready(function() {
+		$('.modal').modal()
+	})
 })
