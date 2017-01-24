@@ -19,6 +19,8 @@
     "angular-route": "^1.6.1",
     "angular-material": "^1.1.1",
     "firebase": "^3.6.6",
-    "angular": "^1.6.1"
+    "angular": "^1.6.1",
+    "materialize": "^0.97.8",
+    "angulargrid": "^0.6.3"
   }
 }

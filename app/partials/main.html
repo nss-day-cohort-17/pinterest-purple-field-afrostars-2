@@ -1,0 +1,8 @@
+<div class="conatiner">
+	<div class="dynamic-grid" angular-grid="images" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="false">
+		<div class="show-image" ng-repeat="image in images">
+			<a href=""><img ng-if="image.display_sizes[0].uri" src="{{ image.display_sizes[0].uri }}" class="grid-img"></a>
+			<a class="waves-effect waves-light btn">Save</a>
+		</div>
+	</div>
+</div>
