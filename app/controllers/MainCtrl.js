@@ -10,15 +10,17 @@ app.controller('MainCtrl', function($scope, $http, modalFactory, userBoardsFacto
 			i++
 		}
 		$scope.images = images
-		console.log($scope.images)
 	})
 
 	$scope.setIndex = modalFactory.setIndex
 	$scope.getIndex = modalFactory.getIndex
 	$scope.boards = userBoardsFactory.getBoards()
 
+
+
 	$(document).ready(function() {
 		$('.modal').modal()
 	})
 
+	$scope.searchTag = $routeParams.query
 })

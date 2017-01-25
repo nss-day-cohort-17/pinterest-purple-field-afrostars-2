@@ -7,7 +7,6 @@ app.factory('modalFactory', function() {
 	}
 
 	getIndex = function() {
-		console.log(index)
 		return index
 	}
 
