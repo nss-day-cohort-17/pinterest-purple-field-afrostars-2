@@ -1,15 +1,20 @@
 <div>
   <ul class="row board-card-wrapper">
     <li class="col s4">
-      <article class="board-card new-board">
-        <div class="circle pin-red new-board-circle">
-          <img src="/img/add.png" class="add">
+      <article class="board-card">
+        <div class="pin-pallette new-board-pallette">
+          <div class="circle pin-red new-board-circle">
+            <img src="/img/add.png" class="add">
+          </div>
         </div>
       </article>
         <p>New Board</p>
     </li>
     <li ng-repeat="board in boards" class="col s4">
       <article class="board-card">
+        <div class="pin-pallette overflow-hidden">
+
+        </div>
       </article>
         <p>{{board.title}}</p>
     </li>
