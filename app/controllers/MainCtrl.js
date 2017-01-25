@@ -1,4 +1,4 @@
-app.controller('MainCtrl', function($scope, $http, modalFactory, $routeParams) {
+app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, userBoardsFactory) {
 	$http.get('https://pinterestclone-24ce7.firebaseio.com/pins.json')
 	.then(function(val){
 		let pins = val.data
@@ -10,12 +10,17 @@ app.controller('MainCtrl', function($scope, $http, modalFactory, $routeParams) {
 			i++
 		}
 		$scope.images = images
+		console.dir($scope.images)
 	})
 
 	$scope.setIndex = modalFactory.setIndex
 	$scope.getIndex = modalFactory.getIndex
+	userBoardsFactory
+		.getBoards()
+		.then((returnVal) => {$scope.boards = returnVal})
+		.then(console.log('boards loaded'))
 
-	
+	$scope.addPin = userBoardsFactory.addPin
 
 	$(document).ready(function() {
 		$('.modal').modal()
