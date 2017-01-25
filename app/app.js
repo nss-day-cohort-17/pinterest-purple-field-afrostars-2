@@ -14,8 +14,6 @@ firebase.initializeApp(config);
           authReady()
           if (!user) {
             $location.url('/login')
-          } else {
-          	$location.url('/')
           }
         })
       }
