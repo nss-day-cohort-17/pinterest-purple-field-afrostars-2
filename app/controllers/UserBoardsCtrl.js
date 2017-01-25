@@ -1,6 +1,10 @@
 app.controller('UserBoardsCtrl', function($scope, userBoardsFactory) {
   userBoardsFactory.getBoards()
-  .then((val) => {
-    $scope.boards = val
+  .then((boards) => {
+    $scope.boards = boards
+    // userBoardsFactory.getBoardPins()
+    // .then((pins) => {
+    //   $scope.pins = pins
+    // })
   })
 })
