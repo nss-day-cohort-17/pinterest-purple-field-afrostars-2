@@ -12,7 +12,7 @@
     <!-- - - - - - - - - - - - - - -
      - - Nav Bar
      - - - - - - - - - - - - - -  -->
-    <nav class="grey darken-1" ng-controller="NavCtrl">
+    <nav class="grey darken-1 sticky" ng-controller="NavCtrl">
       <div class="nav-wrapper">
         <a href="#/" class="brand-logo hide-on-med-and-down"><img src="/img/logo.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -26,16 +26,16 @@
           <li><a href="#/">Home</a></li>
           <li><a href="#/user/boards">My boards</a></li>
         </ul>
-        <form class="grey lighten-1">
+        <form ng-submit="searchForPins()" class="grey lighten-1">
           <div class="input-field">
-            <input id="search" type="text">
+            <input ng-model="searchTag" id="search" type="text">
             <label for="search"><i class="material-icons">search</i></label>
           </div>
         </form>
       </div>
     </nav>
 
-    <div ng-view>
+    <div class="mainview" ng-view>
 
     </div>
 
@@ -48,6 +48,7 @@
     <script src="/lib/angular-route/angular-route.min.js"></script>
     <script src="/app/app.js"></script>
     <script src="/app/factories/userBoardsFactory.js"></script>
+    <script src="/app/factories/modalFactory.js"></script>
     <script src="/app/controllers/MainCtrl.js"></script>
     <script src="/app/controllers/NavCtrl.js"></script>
     <script src="/app/controllers/UserBoardsCtrl.js"></script>

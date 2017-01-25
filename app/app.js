@@ -23,6 +23,7 @@ app.config(function($routeProvider, $locationProvider) {
 	   	templateUrl : '/app/partials/search.html',
 	   	controller : 'MainCtrl'
 	   })
+	   // Not using this route currently
 	   .when('/pin/:pinId', {
 	   	templateUrl : '/app/partials/pin.html',
 	   	controller : 'PinCtrl'
