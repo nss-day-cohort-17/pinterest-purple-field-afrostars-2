@@ -20,17 +20,22 @@
  *********************/
 
 nav form {
-	width: 80% !important;
+	width: 70% !important;
 	margin-left: 10%;
 	max-height: 90%;
 }
 
 nav .brand-logo img {
 	max-height: 63px;
+    display: inline;
 }
 
 
 
+#logoText {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
 
 /*****************************************
 		Main Page and Search Layout
