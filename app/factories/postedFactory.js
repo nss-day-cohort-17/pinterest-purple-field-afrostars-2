@@ -12,27 +12,20 @@
 
 
 
-app.factory('postedFactory', function($scope, userBoardsFactory, $http) {
+app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
   return {
     // var pinbook = []
         getPersonalBoard : () => {
           userBoardsFactory.getBoards()
           .then((val) =>{
-            $scope.boards = val
+            console.log("ran getBoards")
             console.log(val)
             console.log("more stuff")
+            dog = $routeParams.boardName //saves the name of the board
+            console.log($routeParams.boardName)
+            console.log(dog)
           })
-    //   userBoardsFactory.getBoards()
-    //   .then((val) => {
-    //     $scope.boards = val
-    //     console.log(val)
-    //     console.log("yo cat")
-    //   })
-    //
-    //
-    //
-    //
-    //
+
     //   $scope.pinBoard = $routeParams.boardName
     //
     //
@@ -42,23 +35,9 @@ app.factory('postedFactory', function($scope, userBoardsFactory, $http) {
     //     }
   // }
     }
-    // console.log("hay")
   }
 })
 
-
-
-// app.factory('userBoardsFactory', function($http) {
-//   return {
-//     getBoards : () => {
-//       return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json')
-//       .then((value) => {
-//         console.log(value)
-//         return value.data
-//       })
-//     }
-//   }
-// })
 
 // needs to get the board by title, so with an if function probably.
 // something like if(boards[i].title === $scope.pinBoard)
