@@ -15,7 +15,6 @@ app.controller('MainCtrl', function($scope, $http, modalFactory, $routeParams) {
 	$scope.setIndex = modalFactory.setIndex
 	$scope.getIndex = modalFactory.getIndex
 
-	
 
 	$(document).ready(function() {
 		$('.modal').modal()

@@ -12,7 +12,7 @@
     <!-- - - - - - - - - - - - - - -
      - - Nav Bar
      - - - - - - - - - - - - - -  -->
-    <nav class="grey darken-1 sticky" ng-controller="NavCtrl">
+    <nav ng-if="!firebase.auth().currentUser" class="grey darken-1 sticky" ng-controller="NavCtrl">
       <div class="nav-wrapper">
         <a href="#/" class="brand-logo hide-on-med-and-down"><img src="/img/logo.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -47,6 +47,8 @@
     <script src="/lib/angulargrid/angulargrid.min.js"></script>
     <script src="/lib/angular-route/angular-route.min.js"></script>
     <script src="/app/app.js"></script>
+    <script src="/app/controllers/LoginCtrl.js" type="text/javascript"></script>
+    <script src="/app/factories/AuthFactory.js" type="text/javascript"></script>
     <script src="/app/factories/userBoardsFactory.js"></script>
     <script src="/app/factories/modalFactory.js"></script>
     <script src="/app/controllers/MainCtrl.js"></script>

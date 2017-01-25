@@ -1,0 +1,23 @@
+ <div id="modal1" class="modal">
+<div class="row">
+        <form class="col s12">
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input ng-model="email" id="image_url" type="text" class="validate">
+              <label for="image_url">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input ng-model="password" id="image_title" type="text" class="validate">
+              <label for="image_title">Password</label>
+            </div>
+          </div>   
+                <a ng-click="logIn()" class=" modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+      			<a ng-click="register()" class=" modal-action modal-close waves-effect waves-red btn-flat">Register</a>
+      			<a ng-click="logOut()" class=" modal-action modal-close waves-effect waves-red btn-flat">Logout</a>          
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+    </div>
