@@ -1,4 +1,4 @@
-app.controller('MainCtrl', function($scope, $http, modalFactory) {
+app.controller('MainCtrl', function($scope, $http, modalFactory, $routeParams) {
 	$http.get('https://pinterestclone-24ce7.firebaseio.com/pins.json')
 	.then(function(val){
 		let pins = val.data
@@ -10,14 +10,16 @@ app.controller('MainCtrl', function($scope, $http, modalFactory) {
 			i++
 		}
 		$scope.images = images
-		console.log($scope.images)
 	})
 
 	$scope.setIndex = modalFactory.setIndex
 	$scope.getIndex = modalFactory.getIndex
 
+	
+
 	$(document).ready(function() {
 		$('.modal').modal()
 	})
 
+	$scope.searchTag = $routeParams.query
 })
