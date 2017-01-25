@@ -1,11 +1,11 @@
-
-app.controller('PostedCtrl', function($scope, $routeParams, $http) {
+app.controller('PostedCtrl', function($scope, $routeParams, postedFactory) {
   console.log("opening the worm can")
   $scope.pinBoard = $routeParams.boardName
-  // postedFactory.getPersonalBoard()
+  postedFactory.getPersonalBoard()
   // .then((val) => {
   //   $scope.personalBoard = val
   // })
+  console.log("can openned")
 })
 
 
