@@ -10,8 +10,15 @@ nav form {
 
 nav .brand-logo img {
 	max-height: 63px;
+    display: inline;
 }
 
+
+
+#logoText {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
 
 /*****************************************
 		Main Page and Search Layout
