@@ -1,14 +1,21 @@
 <div>
-  <ul class="container row">
-    <li class="col s4">
+  <ul class="row board-card-wrapper">
+    <li class="col s12 m6 l4">
       <article class="board-card">
-        <p><a href="#">+ New Board</a></p>
+        <div class="pin-pallette new-board-pallette">
+          <div class="circle pin-red new-board-circle">
+            <img src="/img/add.png" class="add">
+          </div>
+        </div>
       </article>
+        <p>New Board</p>
     </li>
-    <li ng-repeat="board in boards" class="col s4">
+    <li ng-repeat="board in boards" class="col s12 m6 l4">
       <article class="board-card">
-        <p><a href="#/user/{{board.title}}">{{board.title}}</a></p>
+        <div class="pin-pallette overflow-hidden">
+        </div>
       </article>
+        <p><a href="#/user/{{board.title}}">{{board.title}}</a></p>
     </li>
   </ul>
 </div>

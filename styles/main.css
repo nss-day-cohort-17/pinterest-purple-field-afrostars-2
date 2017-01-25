@@ -1,3 +1,20 @@
+/*****************************************
+             Generic Styles
+******************************************/
+
+.pin-red {
+    background-color: #bd081c;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.relative {
+    position: relative;
+}
+
+
 /*********************
  ** Page Layout
  *********************/
@@ -11,6 +28,8 @@ nav form {
 nav .brand-logo img {
 	max-height: 63px;
 }
+
+
 
 
 /*****************************************
@@ -66,12 +85,51 @@ nav .brand-logo img {
 .maroon {
     background-color: maroon;
 }
+
+
+
+
+
+
 /*****************************************
               Boards Layout
 ******************************************/
 
+.board-card-wrapper {
+
+}
+
 .board-card {
-    border-radius: 5px;
+
+}
+
+.pin-pallette {
+    border-radius: 10px;
+    height: 200px;
+    width: 301px;
+}
+
+.new-board-pallette {
+    display: flex;
+    background-color: #efefef;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.new-board-circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.add {
+    width: 30px;
+    height: 30px;
+    z-index: 3;
 }
 
 /*****************************************
