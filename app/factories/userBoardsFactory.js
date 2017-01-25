@@ -6,6 +6,10 @@ app.factory('userBoardsFactory', function($http) {
         console.log(value)
         return value.data
       })
-    }
+    },
+    addPin: (boardId, pinId) => {
+			let data = {pin_id: pinId}
+			$http.post(`https://pinterestclone-24ce7.firebaseio.com/boards/${boardId}/pins.json`, JSON.stringify(data))
+		}
   }
 })

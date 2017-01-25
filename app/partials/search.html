@@ -15,9 +15,16 @@
   <div class="modal-content">
     <img src="{{filteredImages[getIndex()].url}}">
     <h4>Available Boards</h4>
-    <ul></ul>
+    <ul>
+    	<li ng-repeat="(board_id, board) in boards">
+        <div class="board-link">
+        <h6 class="left">{{board.title}}</h6>
+        <button class="waves-effect btn right" ng-click="addPin(board_id, filteredImages[getIndex()].pin_id)">Save</button>
+        </div>
+      </li>
+    </ul>
   </div>
   <div class="modal-footer">
-    <a class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
   </div>
 </div>
