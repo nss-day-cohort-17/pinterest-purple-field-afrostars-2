@@ -14,15 +14,15 @@
     <img src="{{images[getIndex()].url}}">
     <h4 class="center-align">Available Boards</h4>
     <ul>
-      <li ng-repeat="board in boards">
+      <li ng-repeat="(board_id, board) in boards">
         <div class="board-link valign">
         <h6 class="left">{{board.title}}</h6>
-        <button class="waves-effect btn right">Save</button>
+        <button class="waves-effect btn right" ng-click="addPin(board_id, images[getIndex()].pin_id)">Save</button>
         </div>
       </li>
     </ul>
   </div>
   <div class="modal-footer">
-    <a class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
   </div>
 </div>
