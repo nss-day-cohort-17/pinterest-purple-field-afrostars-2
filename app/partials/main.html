@@ -12,7 +12,15 @@
 <div id="save-modal" class="modal">
   <div class="modal-content">
     <img src="{{images[getIndex()].url}}">
-    <h4>Available Boards</h4>
+    <h4 class="center-align">Available Boards</h4>
+    <ul>
+      <li ng-repeat="board in boards">
+        <div class="board-link valign">
+        <h6 class="left">{{board.title}}</h6>
+        <button class="waves-effect btn right">Save</button>
+        </div>
+      </li>
+    </ul>
   </div>
   <div class="modal-footer">
     <a class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
