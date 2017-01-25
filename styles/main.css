@@ -6,7 +6,13 @@
     background-color: #bd081c;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
 
+.relative {
+    position: relative;
+}
 
 
 /*********************
