@@ -12,14 +12,16 @@
 
 
 
-app.factory('postedFactory', function($http) {
+app.factory('postedFactory', function($scope, userBoardsFactory, $http) {
   return {
     // var pinbook = []
         getPersonalBoard : () => {
-      return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json')
-           .then((value) => {
-             console.log(value)
-             return value.data
+          userBoardsFactory.getBoards()
+          .then((val) =>{
+            $scope.boards = val
+            console.log(val)
+            console.log("more stuff")
+          })
     //   userBoardsFactory.getBoards()
     //   .then((val) => {
     //     $scope.boards = val
@@ -38,7 +40,7 @@ app.factory('postedFactory', function($http) {
     //     if($scope.boards[i].title === $scope.pinBoard) {
     //       pinbook = $scope.boards[i].pins
     //     }
-  })
+  // }
     }
     // console.log("hay")
   }
