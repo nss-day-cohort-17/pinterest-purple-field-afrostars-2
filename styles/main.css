@@ -96,18 +96,20 @@ nav .brand-logo img {
 ******************************************/
 
 .board-card-wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+
 }
 
 .board-card {
-    border-radius: 5px;
+
+}
+
+.pin-pallette {
+    border-radius: 10px;
     height: 200px;
     width: 301px;
 }
 
-.new-board {
+.new-board-pallette {
     display: flex;
     background-color: #efefef;
     align-items: center;
