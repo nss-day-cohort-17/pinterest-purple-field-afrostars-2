@@ -18,60 +18,70 @@
 
 app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
   return {
-        getPersonalBoard : () => {
-          userBoardsFactory.getBoards()
-          .then((val) =>{
-            console.log("ran getBoards")
-            // console.log(val)
-            boarddata = val
-            console.log("more stuff")
-            name = $routeParams.boardName //saves the name of the board
-            console.log($routeParams.boardName)
-            console.log(name)
-            // console.log(boarddata)
+    getPersonalBoard : () => {
+      var arraything = [];
 
-            var result = {};
-            // var re = [];
-            var boardTitle
-            var boardPins
+      return userBoardsFactory.getBoards()
+      .then((val) =>{
+        // console.log("ran getBoards")
+        // console.log(val)
+        boarddata = val
+        // console.log("more stuff")
+        name = $routeParams.boardName //saves the name of the board
+        // console.log($routeParams.boardName)
+        // console.log(name)
+        // console.log(boarddata)
 
-            angular.forEach(boarddata, function(value, key) {
+        var result = {};
 
-                result[key] = value;
-                // console.log("this is a key" + key)
-                // console.log("this is a value" + value)
-                // console.log("this is result[key]" + result[key])
-                boardPins = result[key].pins
-                boardTitle = result[key].title
-                console.log(boardTitle)
-                if( boardTitle == name) {
-                  console.log (boardTitle + " = " + name)
-                  console.log(boardPins)
+        // var re = [];
+        var boardTitle
+        var boardPins
 
-                  var ultimateGoal = {};
-                  var picture
-                  var arraything = [];
+        angular.forEach(boarddata, function(value, key) {
+          result[key] = value;
+          // console.log("this is a key" + key)
+          // console.log("this is a value" + value)
+          // console.log("this is result[key]" + result[key])
+          boardPins = result[key].pins
+          boardTitle = result[key].title
+          console.log(boardTitle)
+          if( boardTitle == name) {
+            console.log (boardTitle + " = " + name)
+            console.log(boardPins)
 
-                  angular.forEach(boardPins, function(pinNumber, pinId) {
-                    picture = pinNumber.pin_id
-                    // console.log(pinNumber)
-                    // console.log("this is the pin" + pinNumber)
-                    console.log("this is the pinId " + picture)
-                    console.log(picture)
-                    this.push(picture);
-                  }, arraything);
-                  console.log(arraything)
+            var picture
 
-
-                }
-
-
-            })
-
-          })
-
+            angular.forEach(boardPins, function(pinNumber, pinId) {
+              picture = pinNumber.pin_id
+              // console.log(pinNumber)
+              // return pinNumber.pin_id
+              // console.log("this is the pin" + pinNumber)
+              console.log("this is the pinId " + picture)
+              console.log(picture)
+              this.push(picture);
+            }, arraything);
+            console.log(arraything)
+          }
+        })
+        return arraything
+      })
     }
+
+
+
+
+
+
+
+
+
+          
   }
+  console.log(arraything)
+
+  // console.log(pinNumber.pin_id)
+  // return getPersonalBoard();
 })
 
 //***************************************
