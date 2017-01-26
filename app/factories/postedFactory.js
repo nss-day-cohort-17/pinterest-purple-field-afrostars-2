@@ -1,17 +1,3 @@
-//*********************************************
-//      Reference of previous try at code
-//*******************************************
-// app.factory('postedFactory', function($http) {
-//   return {
-//     getPersonalBoard : () => {
-//       return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json')
-//       .then((value) => {
-//         console.log(value)
-//         return value.data
-//       })
-//     }
-//   }
-// })
 //*******************************************************
 //********************************************************
 
@@ -35,8 +21,6 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
         // console.log(boarddata)
 
         var result = {};
-
-        // var re = [];
         var boardTitle
         var boardPins
 
@@ -66,7 +50,6 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
             console.log(arraything)
           }
         })
-        // return arraything //got this part to work
         console.log("fine")
         console.log(arraything)
 
@@ -75,22 +58,9 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
           console.log("working")
           pindata = val
           console.log("here is a thing")
-          console.log(pindata)
-          // console.log(pindata.value)
-          // angular.forEach(pindata, function() {
-          //   this.push(pindata);
-          // }, pinLink);
-          // console.log(pinLink)
-
-
-          // angular.forEach(pindata, function(value, key) {
-          //   pinUid = value
-          //   console.log("righty ho")
-          //   console.log(pinUid)
-          // })
-          // return pindata
+          // console.log(pindata)
           console.log("Dogs and cats")
-          console.log(arraything)
+          // console.log(arraything)
           var pinKey
           angular.forEach(pindata, function(value, key) {
             currentPin = value
@@ -101,42 +71,19 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
               // console.log("this is from the array")
               // console.log(arraything[i])
               if ( arraything[i] == pinKey) {
-                console.log("this is the right pin match")
+                console.log("john the coward")
+                properUrl = currentPin.url
+                pinLink.push(properUrl);
               }
             }
           })
-
-
+          return pinLink
+          console.log(pinLink)
         })
       })
-    }//, //for getPersonalBoard
-
-    // getPins : () => {  //Keep this around for if I need to use a second call
-
-
-
-      // return pinFactory.getPins()
-      // .then((val) =>{
-      //   console.log("working")
-      //   pindata = val
-      //   console.log("here is a thing")
-      //   console.log(pindata)
-        // console.log(pindata.value)
-        // angular.forEach(pindata, function() {
-        //   this.push(pindata);
-        // }, pinLink);
-        // console.log(pinLink)
-
-        // return pindata
-      // })
-    // } //for the getPins
-
-
-
-
+    }
   }//return for all things
-
-  // return getPersonalBoard();
+  return getPersonalBoard();
 })
 
 //***************************************
