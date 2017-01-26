@@ -1,20 +1,27 @@
 
 app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory) {
+  $scope.boardId = postedFactory.getBoardId()
+  console.log($scope.boardId)
   $scope.tags = [];
-  console.log("opening the worm can")
   $scope.pinBoard = $routeParams.boardName
   postedFactory.getPersonalBoard()
   .then(function(val) {
     $scope.personalBoard = val
-    console.log(val)
-  })
 
-  console.log("can openned")
+  })
 
   // console.log(arraything)
 
   $scope.postNewPin = function() {
-      postedFactory.postNewPin($scope.tags, $scope.pinUrl).then(console.log)
+      postedFactory.postNewPin($scope.tags, $scope.pinUrl).then(function(response) {
+        $http({
+          method : 'POST',
+          url : `https://pinterestclone-24ce7.firebaseio.com/boards/${$scope.boardId}/pins.json`,
+          data : {
+            pin_id : response.data.name
+          }
+        })
+      })
       $scope.pinUrl = null
       $scope.tagName = null
       $scope.tags = [];
@@ -23,7 +30,7 @@ app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory
   $scope.addTag = function() {
     $scope.tags.push($scope.tagName)
     $scope.tagName = null
-    console.log($scope.tags)
+    // console.log($scope.tags)
   }
 
   $scope.deleteTag = function($index) {

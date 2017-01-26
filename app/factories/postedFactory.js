@@ -1,8 +1,10 @@
 //*******************************************************
 //********************************************************
 
-
 app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactory, $http) {
+  
+  var boardId;
+
   return {
     getPersonalBoard : () => {
       var arraything = [];
@@ -14,11 +16,9 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
         // console.log("ran getBoards")
         // console.log(val)
         boarddata = val
+        console.log(boarddata)
         // console.log("more stuff")
         name = $routeParams.boardName //saves the name of the board
-        // console.log($routeParams.boardName)
-        // console.log(name)
-        // console.log(boarddata)
 
         var result = {};
         var boardTitle
@@ -31,23 +31,16 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
           // console.log("this is result[key]" + result[key])
           boardPins = result[key].pins
           boardTitle = result[key].title
-          console.log(boardTitle)
           if( boardTitle == name) {
-            console.log (boardTitle + " = " + name)
-            console.log(boardPins)
+
 
             var picture
 
             angular.forEach(boardPins, function(pinNumber, pinId) {
               picture = pinNumber.pin_id
-              // console.log(pinNumber)
-              // return pinNumber.pin_id
-              // console.log("this is the pin" + pinNumber)
-              console.log("this is the pinId " + picture)
-              console.log(picture)
+
               this.push(picture);
             }, arraything);
-            console.log(arraything)
           }
         })
         console.log("fine")
@@ -94,9 +87,17 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
               url : url
         }
       })
+    },
+    getBoardId() {
+      return boardId
+    },
+    setBoardId(key) {
+        boardId = key
     }
+
   }//return for all things
   return getPersonalBoard();
+
 })
 
 //***************************************
