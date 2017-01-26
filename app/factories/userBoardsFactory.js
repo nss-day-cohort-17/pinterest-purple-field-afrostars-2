@@ -1,4 +1,4 @@
-app.factory('userBoardsFactory', function($http) {
+app.factory('userBoardsFactory', function($http, $q) {
   return {
     getBoards : () => {
       return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json')
@@ -7,6 +7,15 @@ app.factory('userBoardsFactory', function($http) {
         return value.data
       })
     },
+
+    getBoardsAndPins : () => {
+      const promiseOne = $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json');
+      const promiseTwo = $http.get('https://pinterestclone-24ce7.firebaseio.com/pins.json');
+
+        // Array of Promises
+      return $q.all([promiseOne, promiseTwo])
+    },
+
     addPin: (boardId, pinId) => {
 			let data = {pin_id: pinId}
 			$http.post(`https://pinterestclone-24ce7.firebaseio.com/boards/${boardId}/pins.json`, JSON.stringify(data))

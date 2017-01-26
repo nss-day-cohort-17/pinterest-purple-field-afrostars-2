@@ -1,27 +1,9 @@
-app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, $http, AuthFactory, $q) {
-
-  const promiseOne = $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json');
-  const promiseTwo = $http.get('https://pinterestclone-24ce7.firebaseio.com/pins.json');
-  // Array of Promises
-  $q.all([promiseOne, promiseTwo])
-    .then(data => {
-      console.log('Both promises have resolved', data);
-      $scope.boards = data[0].data
-      $scope.pins = data[1].data
-      console.log('boards', $scope.boards)
-      console.log('pins', $scope.pins)
-
-
+app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, $http, AuthFactory) {
+  userBoardsFactory.getBoardsAndPins()
+  .then((boardsAndPins) => {
+    $scope.boards = boardsAndPins[0].data
+    $scope.pins = boardsAndPins[1].data
   })
-
-  // userBoardsFactory.getBoards()
-  // .then((boards) => {
-  //   $scope.boards = boards
-  //   // userBoardsFactory.getBoardPins()
-  //   // .then((pins) => {
-  //   //   $scope.pins = pins
-  //   // })
-  // })
 
   $scope.addBoard = (boardName) => {
     userBoardsFactory
@@ -39,10 +21,4 @@ app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, 
   $(document).ready(function() {
     $('.modal').modal()
   })
-
-
-
-
-
-
 })
