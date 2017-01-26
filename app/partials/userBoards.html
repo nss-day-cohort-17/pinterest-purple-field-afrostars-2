@@ -13,15 +13,14 @@
       </a>
     </li>
     <li ng-repeat="board in boards" class="col s12 m6 l4">
-      <article class="board-card">
-        <div class="pin-pallette overflow-hidden" ng-repeat="boardPins in board.pins">
-          <!-- <p>{{boardPins.pin_id}}</p> -->
-          <div ng-repeat="(pinKey, pinValue) in pins" class="overflow-hidden">
-            <img src={{pinValue.url}} ng-if="pinKey === boardPins.pin_id">
+      <article class="board-card overflow-hidden">
+        <div class="pin-pallette overflow-hidden pallete-flexer">
+          <div class="overflow-hidden pin-thumb-wrap" ng-repeat="boardPins in board.pins">
+            <img ng-repeat="(pinKey, pinValue) in pins" src={{pinValue.url}} class="pin-thumb" ng-if="pinKey === boardPins.pin_id">
           </div>
         </div>
       </article>
-        <p>{{board.title}}</p>
+      <p>{{board.title}}</p>
     </li>
   </ul>
 </div>
