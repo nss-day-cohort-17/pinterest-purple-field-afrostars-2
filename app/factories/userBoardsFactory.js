@@ -18,8 +18,7 @@ app.factory('userBoardsFactory', function($http) {
       }
       return $http.post(`https://pinterestclone-24ce7.firebaseio.com/boards/.json`, JSON.stringify(data))
     },
-    // Returns all boards that match a given UID
-    getBoardsByUid: (uid) => {
+    getBoardsByUid: function(uid) {
       return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json')
         .then((value) => {
           let allBoards = value.data

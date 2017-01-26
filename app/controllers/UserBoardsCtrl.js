@@ -10,6 +10,7 @@ app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, 
     // })
   })
 
+  console.log(userBoardsFactory.getBoards, userBoardsFactory.addPin, userBoardsFactory.addBoard, userBoardsFactory.getBoardsByUid)
   userBoardsFactory.getBoardsByUid(AuthFactory.getUid())
     .then((boards) => {$scope.userBoards = boards})
     .then(() => console.log("$scope.userBoards", $scope.userBoards) )
