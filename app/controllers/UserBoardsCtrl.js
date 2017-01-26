@@ -1,13 +1,8 @@
-app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location) {
+app.controller('UserBoardsCtrl', function($scope, postedFactory, userBoardsFactory, $location) {
   userBoardsFactory.getBoards()
   .then((boards) => {
     $scope.boards = boards
-    // userBoardsFactory.getBoardPins()
-    // .then((pins) => {
-    //   $scope.pins = pins
     console.log(boards)
-    console.log("yo dawg")
-    // })
   })
 
   $scope.addBoard = (boardName) => {
@@ -18,6 +13,12 @@ app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location) 
 			)
 			.then($('#new-board-modal').modal('close'))
   }
+
+  $scope.setBoardId = function(id) {
+      postedFactory.setBoardId(id)
+      console.log(id)
+  }
+
 
   $scope.openNewBoardModal = () => {
   	$('#new-board-modal').modal('open')

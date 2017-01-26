@@ -17,6 +17,7 @@
 
 
 app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
+  var boardId;
   return {
     getPersonalBoard : () => {
       var arraything = [];
@@ -26,11 +27,9 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
         // console.log("ran getBoards")
         // console.log(val)
         boarddata = val
+        console.log(boarddata)
         // console.log("more stuff")
         name = $routeParams.boardName //saves the name of the board
-        // console.log($routeParams.boardName)
-        // console.log(name)
-        // console.log(boarddata)
 
         var result = {};
 
@@ -45,23 +44,16 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
           // console.log("this is result[key]" + result[key])
           boardPins = result[key].pins
           boardTitle = result[key].title
-          console.log(boardTitle)
           if( boardTitle == name) {
-            console.log (boardTitle + " = " + name)
-            console.log(boardPins)
+
 
             var picture
 
             angular.forEach(boardPins, function(pinNumber, pinId) {
               picture = pinNumber.pin_id
-              // console.log(pinNumber)
-              // return pinNumber.pin_id
-              // console.log("this is the pin" + pinNumber)
-              console.log("this is the pinId " + picture)
-              console.log(picture)
+
               this.push(picture);
             }, arraything);
-            console.log(arraything)
           }
         })
         return arraything
@@ -79,13 +71,17 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
               url : url
         }
       })
+    },
+    getBoardId() {
+      return boardId
+    },
+    setBoardId(key) {
+      return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards/.json').then(function(val){
+          console.log(val)
+          boardId = val
+      })
     }
-
   }
-  console.log(arraything)
-
-  // console.log(pinNumber.pin_id)
-  // return getPersonalBoard();
 })
 
 //***************************************

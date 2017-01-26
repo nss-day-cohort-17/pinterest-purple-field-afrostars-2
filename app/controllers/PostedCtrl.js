@@ -12,7 +12,16 @@ app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory
   // console.log(arraything)
 
   $scope.postNewPin = function() {
-      postedFactory.postNewPin($scope.tags, $scope.pinUrl).then(console.log)
+      postedFactory.postNewPin($scope.tags, $scope.pinUrl).then(function(response) {
+        console.log(response)
+        $http({
+          method : 'POST',
+          url : 'https://pinterestclone-24ce7.firebaseio.com/boards/.json',
+          data : {
+
+          }
+        })
+      })
       $scope.pinUrl = null
       $scope.tagName = null
       $scope.tags = [];
