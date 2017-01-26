@@ -1,4 +1,4 @@
-app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, userBoardsFactory) {
+app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, userBoardsFactory, AuthFactory) {
 	$http.get('https://pinterestclone-24ce7.firebaseio.com/pins.json')
 	.then(function(val){
 		let pins = val.data
