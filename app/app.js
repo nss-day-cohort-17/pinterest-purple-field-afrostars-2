@@ -46,7 +46,7 @@ app.config(function($routeProvider, $locationProvider) {
 	   	controller : 'UserBoardsCtrl',
 	   	resolve : checkForAuth
 	   })
-	   .when('user/:boardName', {
+	   .when('/user/:boardName', {
 	   	templateUrl : '/app/partials/posted.html',
 	   	controller : 'PostedCtrl',
 	  	resolve : checkForAuth

@@ -13,6 +13,8 @@ app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, u
 		console.dir($scope.images)
 	})
 
+	$scope.myFunction = function() {console.log(AuthFactory.getUid())}
+
 	$scope.setIndex = modalFactory.setIndex
 	$scope.getIndex = modalFactory.getIndex
 	userBoardsFactory
