@@ -1,4 +1,5 @@
 app.factory('AuthFactory', function($q, $http) {
+	console.log('Auth Factory Code is Running')
 	let uid = null
 
 	return {

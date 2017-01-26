@@ -24,8 +24,6 @@ app.factory('userBoardsFactory', function($http) {
           let allBoards = value.data
           let userBoards = {}
           for(boardId in allBoards) {
-            console.log("boardUid", allBoards[boardId].uid)
-            console.log("uid", uid)
             if (allBoards[boardId].uid === uid) {
               userBoards[boardId] = allBoards[boardId]
             }
