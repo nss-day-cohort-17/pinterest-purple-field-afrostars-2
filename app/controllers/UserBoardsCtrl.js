@@ -1,4 +1,6 @@
-app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, AuthFactory) {
+app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, AuthFactory, $rootScope) {
+  console.log('UserBoardsCtrl root scope uid is ' +$rootScope.uid)
+
   userBoardsFactory.getBoards()
   .then((boards) => {
     $scope.boards = boards
@@ -10,9 +12,9 @@ app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, 
     // })
   })
 
-  $scope.logUid = function() {console.log(AuthFactory.getUid())}
+  $scope.logUid = function() {console.log($rootScope.uid)}
 
-  userBoardsFactory.getBoardsByUid(AuthFactory.getUid())
+  userBoardsFactory.getBoardsByUid($rootScope.uid)
     .then((boards) => $scope.userBoards = boards)
     .then(console.log($scope.userBoards))
 
