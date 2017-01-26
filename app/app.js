@@ -8,12 +8,17 @@ var config = {
 firebase.initializeApp(config);
 
     const checkForAuth = {
-      checkForAuth ($location) {
+      checkForAuth ($location, $rootScope) {
         // http://stackoverflow.com/questions/37370224/firebase-stop-listening-onauthstatechanged
         const authReady = firebase.auth().onAuthStateChanged(user => {
           authReady()
           if (!user) {
+          	console.log('User signed out.  $rootScope.uid is ' + $rootScope.uid)
             $location.url('/login')
+          }
+          else {
+          	$rootScope.uid = firebase.auth().currentUser.uid
+          	console.log('User signed in.  $rootScope.uid is ' + $rootScope.uid)
           }
         })
       }
@@ -29,11 +34,13 @@ app.config(function($routeProvider, $locationProvider) {
 	$routeProvider
 	   .when('/', {
 	   	templateUrl : '/app/partials/main.html',
-	   	controller : 'MainCtrl'
+	   	controller : 'MainCtrl',
+	    resolve : checkForAuth
 	   })
 	   .when('/search/pins/:query', {
 	   	templateUrl : '/app/partials/search.html',
-	   	controller : 'MainCtrl'
+	   	controller : 'MainCtrl',
+	    resolve : checkForAuth
 	   })
 	   // Not using this route currently
 	   .when('/pin/:pinId', {

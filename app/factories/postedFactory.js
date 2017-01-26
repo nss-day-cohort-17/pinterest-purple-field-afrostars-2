@@ -76,10 +76,7 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
       return boardId
     },
     setBoardId(key) {
-      return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards/.json').then(function(val){
-          console.log(val)
-          boardId = val
-      })
+        boardId = key
     }
   }
 })
