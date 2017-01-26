@@ -1,3 +1,4 @@
+
 app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory) {
   console.log("opening the worm can")
   $scope.pinBoard = $routeParams.boardName
@@ -8,6 +9,14 @@ app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory
   })
   console.log("can openned")
   // console.log(arraything)
+  
+  $scope.openNewPinModal = () => {
+  	$('#new-pin-modal').modal('open')
+  }
+
+  $(document).ready(function() {
+  	$('.modal').modal()
+  })
 
 
 
@@ -25,3 +34,4 @@ app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory
 //are actually in the board that is selected, and display only those
 //pictures.  possibly a loop to do this combined with a way to read the
 //json pulled from firebase.
+
