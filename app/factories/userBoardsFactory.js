@@ -17,6 +17,21 @@ app.factory('userBoardsFactory', function($http) {
         uid: uid
       }
       return $http.post(`https://pinterestclone-24ce7.firebaseio.com/boards/.json`, JSON.stringify(data))
+    },
+    getBoardsByUid: function(uid) {
+      return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json')
+        .then((value) => {
+          let allBoards = value.data
+          let userBoards = {}
+          for(boardId in allBoards) {
+            console.log("boardUid", allBoards[boardId].uid)
+            console.log("uid", uid)
+            if (allBoards[boardId].uid === uid) {
+              userBoards[boardId] = allBoards[boardId]
+            }
+          }
+          return userBoards
+        })
     }
   }
 })
