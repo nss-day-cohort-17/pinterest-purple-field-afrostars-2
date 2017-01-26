@@ -1,3 +1,10 @@
+//********************************
+//        Base code
+//***************************
+
+
+
+
 app.factory('userBoardsFactory', function($http) {
   return {
     getBoards : () => {
@@ -10,13 +17,6 @@ app.factory('userBoardsFactory', function($http) {
     addPin: (boardId, pinId) => {
 			let data = {pin_id: pinId}
 			$http.post(`https://pinterestclone-24ce7.firebaseio.com/boards/${boardId}/pins.json`, JSON.stringify(data))
-		},
-    addBoard: (boardName, uid) => {
-      let data = {
-        title: boardName,
-        uid: uid
-      }
-      return $http.post(`https://pinterestclone-24ce7.firebaseio.com/boards/.json`, JSON.stringify(data))
-    }
+		}
   }
 })

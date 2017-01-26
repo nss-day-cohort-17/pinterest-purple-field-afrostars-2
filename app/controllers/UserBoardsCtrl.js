@@ -5,6 +5,8 @@ app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location) 
     // userBoardsFactory.getBoardPins()
     // .then((pins) => {
     //   $scope.pins = pins
+    console.log(boards)
+    console.log("yo dawg")
     // })
   })
 
