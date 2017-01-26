@@ -1,7 +1,7 @@
-<div>
-	<div class="dynamic-grid" angular-grid="images" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="false">
+<div ng-cloak>
+	<div class="dynamic-grid" angular-grid="images" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="true">
 		<div class="show-image" ng-repeat="image in images">
-			<a href=""><img src="{{ image.url }}" class="grid-img"></a>
+			<a href=""><img  src="{{ image.url }}" class="grid-img ng-cloak"  data-actual-width = "{{pic.actualWidth}}"  data-actual-height="{{pic.actualHeight}}"></a>
 			<button class="waves-effect waves-light btn modal-trigger" data-target="save-modal" ng-click="$parent.setIndex($index)">Save</button>
 		</div>
 	</div>
