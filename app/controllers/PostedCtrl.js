@@ -6,6 +6,11 @@ app.controller('PostedCtrl', function($scope, $routeParams, postedFactory) {
   //   $scope.personalBoard = val
   // })
   console.log("can openned")
+
+
+
+
+  
 })
 
 

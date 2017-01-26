@@ -19,21 +19,36 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
           userBoardsFactory.getBoards()
           .then((val) =>{
             console.log("ran getBoards")
-            console.log(val)
+            // console.log(val)
+            boarddata = val
             console.log("more stuff")
-            dog = $routeParams.boardName //saves the name of the board
+            name = $routeParams.boardName //saves the name of the board
             console.log($routeParams.boardName)
-            console.log(dog)
+            console.log(name)
+
+            console.log(boarddata)
+
+
+            // var arraything = [];
+            var result = {};
+            // var re = [];
+            angular.forEach(boarddata, function(value, key) {
+
+                result[key] = value;
+                boardPins = result[key].pins
+                boardTitle = result[key].title
+                console.log(boardTitle)
+                if( boardTitle == name) {
+                  console.log (boardTitle + " = " + name)
+                  console.log(boardPins)
+
+                }
+
+
+            })
+
           })
 
-    //   $scope.pinBoard = $routeParams.boardName
-    //
-    //
-    //   for(var i = 0; i < $scope.boards.length; i++) {
-    //     if($scope.boards[i].title === $scope.pinBoard) {
-    //       pinbook = $scope.boards[i].pins
-    //     }
-  // }
     }
   }
 })
@@ -44,3 +59,10 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
 // $scope.pictures= boards[i].pins
 // might then loop through all the pins and make an array of pins with
 // matching id's, then post that array
+
+
+
+
+
+
+//
