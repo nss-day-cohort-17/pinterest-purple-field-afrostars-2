@@ -20,6 +20,7 @@ app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, u
 		.then((returnVal) => {$scope.boards = returnVal})
 		.then(console.log('boards loaded'))
 
+
 	$scope.addPin = userBoardsFactory.addPin
 
 	$(document).ready(function() {

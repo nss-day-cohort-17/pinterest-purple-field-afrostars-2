@@ -7,6 +7,18 @@ var config = {
 };
 firebase.initializeApp(config);
 
+    const checkForAuth = {
+      checkForAuth ($location) {
+        // http://stackoverflow.com/questions/37370224/firebase-stop-listening-onauthstatechanged
+        const authReady = firebase.auth().onAuthStateChanged(user => {
+          authReady()
+          if (!user) {
+            $location.url('/login')
+          }
+        })
+      }
+    }
+
 
 
 const app = angular.module('manApp', ['ngRoute', 'angularGrid']);
@@ -26,15 +38,23 @@ app.config(function($routeProvider, $locationProvider) {
 	   // Not using this route currently
 	   .when('/pin/:pinId', {
 	   	templateUrl : '/app/partials/pin.html',
-	   	controller : 'PinCtrl'
+	   	controller : 'PinCtrl',
+	    resolve : checkForAuth
 	   })
 	   .when('/user/boards', {
 	   	templateUrl : '/app/partials/userBoards.html',
-	   	controller : 'UserBoardsCtrl'
+	   	controller : 'UserBoardsCtrl',
+	   	resolve : checkForAuth
 	   })
 	   .when('/user/:boardName', {
 	   	templateUrl : '/app/partials/posted.html',
-	   	controller : 'PostedCtrl'
+	   	controller : 'PostedCtrl',
+	  	resolve : checkForAuth
+	   })
+	   .when('/login', {
+	   	templateUrl : '/app/partials/login.html',
+	   	controller : 'LoginCtrl',
+	   	resolve : checkForAuth
 	   })
 	   .otherwise({
 	   	redirectTo : '/'

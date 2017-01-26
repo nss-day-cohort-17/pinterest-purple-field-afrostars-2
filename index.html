@@ -17,6 +17,7 @@
         <a href="#/" class="brand-logo hide-on-med-and-down"><img src="/img/logo.png"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li ng-click="logOut()"><a href="#/login">Log Out</a></li>
           <li><a href="#/user/boards">My boards</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
@@ -24,6 +25,7 @@
             <img src="/img/logo.png">
           </div>
           <li><a href="#/">Home</a></li>
+          <li ng-click="logOut()"><a href="#/login">Log Out</a></li>
           <li><a href="#/user/boards">My boards</a></li>
         </ul>
         <form ng-submit="searchForPins()" class="grey lighten-1">
@@ -47,6 +49,8 @@
     <script src="/lib/angulargrid/angulargrid.min.js"></script>
     <script src="/lib/angular-route/angular-route.min.js"></script>
     <script src="/app/app.js"></script>
+    <script src="/app/controllers/LoginCtrl.js" type="text/javascript"></script>
+    <script src="/app/factories/AuthFactory.js" type="text/javascript"></script>
     <script src="/app/factories/userBoardsFactory.js"></script>
     <script src="/app/factories/modalFactory.js"></script>
     <script src="/app/controllers/MainCtrl.js"></script>
