@@ -9,7 +9,7 @@ app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory
     $scope.personalBoard = val
 
   })
-  // console.log("can openned")
+
   // console.log(arraything)
 
   $scope.postNewPin = function() {
@@ -36,7 +36,7 @@ app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory
   $scope.deleteTag = function($index) {
     $scope.tags.splice($index, 1)
   }
-  
+
   $scope.openNewPinModal = () => {
   	$('#new-pin-modal').modal('open')
   }
