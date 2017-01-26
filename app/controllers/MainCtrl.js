@@ -35,4 +35,5 @@ app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, u
 	})
 
 	$scope.searchTag = $routeParams.query
+	$scope.user = firebase.auth().currentUser
 })
