@@ -15,6 +15,11 @@
     <li ng-repeat="board in boards" class="col s12 m6 l4">
       <article class="board-card">
         <div class="pin-pallette overflow-hidden">
+          <div ng-repeat="(key, value) in dataset">
+            <div ng-repeat="(key, value) in pins">
+
+            </div>
+          </div>
         </div>
       </article>
         <p>{{board.title}}</p>
