@@ -66,17 +66,21 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
         })
         return arraything
       })
+    },
+    addTag(tag) {
+      tags.push(tag)
+    },
+    postNewPin(tags, url) {
+      return $http({
+        method : 'POST',
+        url : 'https://pinterestclone-24ce7.firebaseio.com/pins.json',
+        data : {
+              tags : tags,
+              url : url
+        }
+      })
     }
 
-
-
-
-
-
-
-
-
-          
   }
   console.log(arraything)
 
