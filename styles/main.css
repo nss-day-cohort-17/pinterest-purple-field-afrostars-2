@@ -88,15 +88,13 @@ nav .brand-logo img {
 
 
 
-
-
-
 /*****************************************
               Boards Layout
 ******************************************/
 
-.board-card-wrapper {
-
+.board-card-wrapper p {
+    text-decoration: none;
+    color: black;
 }
 
 .board-card {

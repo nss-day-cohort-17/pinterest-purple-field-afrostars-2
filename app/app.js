@@ -32,7 +32,7 @@ app.config(function($routeProvider, $locationProvider) {
 	   	templateUrl : '/app/partials/userBoards.html',
 	   	controller : 'UserBoardsCtrl'
 	   })
-	   .when('user/:boardName', {
+	   .when('/user/:boardName', {
 	   	templateUrl : '/app/partials/posted.html',
 	   	controller : 'PostedCtrl'
 	   })

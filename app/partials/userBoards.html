@@ -1,14 +1,16 @@
 <div>
   <ul class="row board-card-wrapper">
-    <li class="col s12 m6 l4">
-      <article class="board-card">
-        <div class="pin-pallette new-board-pallette">
-          <div class="circle pin-red new-board-circle">
-            <img src="/img/add.png" class="add">
+    <li class="col s12 m6 l4" ng-click="openNewBoardModal()">
+      <a href="">
+        <article class="board-card">
+          <div class="pin-pallette new-board-pallette">
+            <div class="circle pin-red new-board-circle">
+              <img src="/img/add.png" class="add">
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
         <p>New Board</p>
+      </a>
     </li>
     <li ng-repeat="board in boards" class="col s12 m6 l4">
       <article class="board-card">
@@ -18,4 +20,18 @@
         <p>{{board.title}}</p>
     </li>
   </ul>
+</div>
+
+<div id="new-board-modal" class="modal">
+  <div class="modal-content">
+    <h4 class="center-align">New Board</h4>
+    <div class="input-field">
+      <input id="board-name" type="text" class="validate" ng-model="boardName">
+      <label for="board-name">Board Name</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    <a class="btn red modal-close modal-action" ng-click="addBoard(boardName)">Add Board</a>
+  </div>
 </div>
