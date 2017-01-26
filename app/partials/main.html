@@ -21,7 +21,7 @@
       <div class="col s4">
         <h4 class="center-align">Available Boards</h4>
         <ul>
-          <li ng-repeat="(board_id, board) in boards">
+          <li ng-repeat="(board_id, board) in userBoards">
             <div class="board-link">
             <h6 class="left">{{board.title}}</h6>
             <button class="waves-effect btn right" ng-click="addPin(board_id, images[getIndex()].pin_id)">Save</button>

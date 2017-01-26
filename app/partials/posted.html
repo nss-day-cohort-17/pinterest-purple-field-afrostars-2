@@ -26,7 +26,7 @@
       <input id="new-pin-tag" type="text" class="validate" placeholder="Tag the Image" ng-model="tagName">
         <a class="btn brown darken-3" ng-click="addTag()">Add Tag</a>
         <div ng-repeat="tag in tags" >
-          <a ng-click="deleteTag($index)" class="btn red darken-3">{{ tag }}<span>     X</span></a>          
+          <a ng-click="deleteTag($index)" class="btn red darken-3">{{ tag }}<span>     X</span></a>
         </div>
     </div>
   </div>
@@ -39,20 +39,10 @@
   <ul class="container row">
     <li><p>hello</p></li>
     <li><p>{{pinBoard}}</p></li>
-    <!-- <li class="col s4">
-      <article class="board-card">
-        <p><a href="#">+ New Board</a></p>
-      </article>
-    </li> -->
-    <!-- <li ng-repeat="pinedBoard in personalBoard" class="col s4">
-      <article class="board-card">
-        <p>{{pinedBoard.title}}</p>
-      </article>
-    </li>-->
   </ul>
   <ul>
     <li ng-repeat="pins in personalBoard">
-      {{ pins }}</li>
+      <img src="{{pins}}"></li>
     </ul>
 
 </div>

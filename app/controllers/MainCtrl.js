@@ -1,4 +1,4 @@
-app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, userBoardsFactory) {
+app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, userBoardsFactory, $rootScope) {
 	$http.get('https://pinterestclone-24ce7.firebaseio.com/pins.json')
 	.then(function(val){
 		let pins = val.data
@@ -21,6 +21,10 @@ app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, u
 		.getBoards()
 		.then((returnVal) => {$scope.boards = returnVal})
 		.then(console.log('boards loaded'))
+	userBoardsFactory
+		.getBoardsByUid($rootScope.uid)
+		.then((returnVal) => {$scope.userBoards = returnVal})
+		.then(console.log('user boards loaded'))
 
 		// $('.dynamic-grid').hide()
 		// setTimeout(function() {
