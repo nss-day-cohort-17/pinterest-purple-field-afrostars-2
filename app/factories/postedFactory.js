@@ -81,6 +81,19 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
           console.log(pinLink)
         })
       })
+    },
+    addTag(tag) {
+      tags.push(tag)
+    },
+    postNewPin(tags, url) {
+      return $http({
+        method : 'POST',
+        url : 'https://pinterestclone-24ce7.firebaseio.com/pins.json',
+        data : {
+              tags : tags,
+              url : url
+        }
+      })
     }
   }//return for all things
   return getPersonalBoard();
@@ -97,18 +110,6 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
 //*******************************************************
 //****************************************************
 
-
-//**************************************
-//      Reference code for .push function
-//*****************************************
-// var values = {name: 'misko', gender: 'male'};
-// var log = [];
-// angular.forEach(values, function(value, key) {
-//   this.push(key + ': ' + value);
-// }, log);
-// expect(log).toEqual(['name: misko', 'gender: male']);
-//**********************************************************
-//********************************************************
 
 
 

@@ -22,13 +22,17 @@
   <div class="modal-content">
     <h4 class="center-align">Upload Pin From the Web</h4>
     <div class="input-field">
-      <input id="pin-name" type="text" class="validate" placeholder="Pin Image Address" ng-model="pinName">
+      <input id="pin-name" type="text" class="validate" placeholder="Pin Image Address" ng-model="pinUrl">
       <input id="new-pin-tag" type="text" class="validate" placeholder="Tag the Image" ng-model="tagName">
+        <a class="btn brown darken-3" ng-click="addTag()">Add Tag</a>
+        <div ng-repeat="tag in tags" >
+          <a ng-click="deleteTag($index)" class="btn red darken-3">{{ tag }}<span>     X</span></a>
+        </div>
     </div>
   </div>
   <div class="modal-footer">
     <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    <a class="btn red modal-close modal-action" ng-click="addBoard(boardName)">Upload Pin</a>
+    <a class="btn red modal-close modal-action" ng-click="postNewPin()">Upload Pin</a>
   </div>
 </div>
 <div>
