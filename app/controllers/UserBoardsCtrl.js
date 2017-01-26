@@ -1,17 +1,11 @@
 app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, AuthFactory, $rootScope) {
   console.log('UserBoardsCtrl root scope uid is ' +$rootScope.uid)
-
-  userBoardsFactory.getBoards()
-  .then((boards) => {
-    $scope.boards = boards
-    // userBoardsFactory.getBoardPins()
-    // .then((pins) => {
-    //   $scope.pins = pins
-    // console.log(boards)
-    // console.log("yo dawg")
-    // })
+  userBoardsFactory.getBoardsAndPins()
+  .then((boardsAndPins) => {
+    $scope.boards = boardsAndPins[0].data
+    $scope.pins = boardsAndPins[1].data
   })
-
+  
   $scope.logUid = function() {console.log($rootScope.uid)}
 
   userBoardsFactory.getBoardsByUid($rootScope.uid)
@@ -28,10 +22,10 @@ app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, 
   }
 
   $scope.openNewBoardModal = () => {
-  	$('#new-board-modal').modal('open')
+    $('#new-board-modal').modal('open')
   }
 
   $(document).ready(function() {
-  	$('.modal').modal()
+    $('.modal').modal()
   })
 })

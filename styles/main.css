@@ -170,16 +170,36 @@ nav {
 }
 
 .board-card {
-
+    border-radius: 10px;
+    background-color: #efefef;
+    width: 301px;
 }
 
 .pin-pallette {
-    border-radius: 10px;
     height: 200px;
     width: 301px;
 }
 
+.pallette-flexer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pin-thumb-wrap {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pin-thumb {
+    display: inline-block;
+    width: 99px;
+    height: 98px;
+}
+
 .new-board-pallette {
+    border-radius: 10px;
     display: flex;
     background-color: #efefef;
     align-items: center;
