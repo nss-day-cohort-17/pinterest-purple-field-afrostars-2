@@ -11,9 +11,14 @@ app.controller('LoginCtrl', function($scope, $location, AuthFactory) {
  }
 
   $scope.register = function() {
-  	AuthFactory.newUser($scope.email, $scope.password).then(function() {
-  		$location.url('/')
-  	})
+  	AuthFactory.newUser($scope.email, $scope.password)
+      .then(function() {
+        console.log('Posting user to firebase')
+        AuthFactory.postUser($scope.email, AuthFactory.getUid())
+      })
+      .then(function() {
+        $location.url('/')
+      })
  }
  $scope.logOut = function() {
  		AuthFactory.signOut().then(function(){
