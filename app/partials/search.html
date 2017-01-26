@@ -1,11 +1,11 @@
 <div>
 	<div class="container">
-		<h4 class="tag">{{ searchTag }}</h4>
+		<h4 class="tag">{{ searchTag }}.</h4>
 	</div>
-	<div class="dynamic-grid" angular-grid="images" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="false">
+	<div class="dynamic-grid" angular-grid="images" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="true">
 		<div class="show-image" ng-repeat="image in filteredImages = (images | filter : searchTag)">
 			<a href=""><img src="{{ image.url }}" class="grid-img"></a>
-			<button class="waves-effect waves-light btn modal-trigger" data-target="save-modal" ng-click="$parent.setIndex($index)">Save</button>
+			<button class="waves-effect waves-light btn modal-trigger" data-target="save-modal" ng-click="$parent.setIndex($index)">   Save</button>
 		</div>
 	</div>
 </div>
@@ -13,16 +13,22 @@
 <!-- Modal Structure -->
 <div id="save-modal" class="modal">
   <div class="modal-content">
-    <img src="{{filteredImages[getIndex()].url}}">
-    <h4>Available Boards</h4>
-    <ul>
-    	<li ng-repeat="(board_id, board) in boards">
-        <div class="board-link">
-        <h6 class="left">{{board.title}}</h6>
-        <button class="waves-effect btn right" ng-click="addPin(board_id, filteredImages[getIndex()].pin_id)">Save</button>
-        </div>
-      </li>
-    </ul>
+    <div class="row">
+      <div class="col s8">
+        <img src="{{filteredImages[getIndex()].url}}">
+      </div>
+      <div class="col s4">
+        <h4>Available Boards</h4>
+        <ul>
+        	<li ng-repeat="(board_id, board) in boards">
+            <div class="board-link">
+            <h6 class="left">{{board.title}}</h6>
+            <button class="waves-effect btn right" ng-click="addPin(board_id, filteredImages[getIndex()].pin_id)">   Save</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
   <div class="modal-footer">
     <a class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>

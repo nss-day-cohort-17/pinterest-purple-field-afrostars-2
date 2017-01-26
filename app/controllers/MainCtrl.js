@@ -20,6 +20,11 @@ app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, u
 		.then((returnVal) => {$scope.boards = returnVal})
 		.then(console.log('boards loaded'))
 
+		// $('.dynamic-grid').hide()
+		// setTimeout(function() {
+		// 	$('.dynamic-grid').show()
+		// 	$scope.$apply()
+		// }, 100)
 
 	$scope.addPin = userBoardsFactory.addPin
 

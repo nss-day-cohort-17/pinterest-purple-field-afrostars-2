@@ -64,3 +64,15 @@ app.config(function($routeProvider, $locationProvider) {
 $(document).ready(function() {
 	$(".button-collapse").sideNav();
 })
+
+app.directive("showOnLoad", function() {
+    return {
+        link: function(scope, element) {
+            element.on("load", function() {
+                scope.$apply(function() {
+                    scope.images = true;
+                });
+            });
+        }
+    };
+});
