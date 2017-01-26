@@ -1,6 +1,6 @@
 <div ng-cloak>
 	<div class="dynamic-grid" angular-grid="images" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="true">
-		<div class="show-image" ng-repeat="image in images" show-on-load>
+		<div ng-enter class="show-image" ng-repeat="image in images" show-on-load>
 			<a href=""><img src="{{ image.url }}" class="grid-img ng-cloak"  data-actual-width = "{{pic.actualWidth}}"  data-actual-height="{{pic.actualHeight}}"></a>
 			<button class="waves-effect waves-light btn modal-trigger" data-target="save-modal" ng-click="$parent.setIndex($index)">Save</button>
 		</div>
@@ -10,6 +10,9 @@
 <!-- Modal Structure -->
 
 <div id="save-modal" class="modal">
+  <div class="modal-footer">
+    <a class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
   <div class="modal-content">
     <div class="row">
       <div class="col s8">
@@ -27,8 +30,5 @@
         </ul>
         </div>
       </div>
-  </div>
-  <div class="modal-footer">
-    <a class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
   </div>
 </div>

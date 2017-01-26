@@ -65,14 +65,9 @@ $(document).ready(function() {
 	$(".button-collapse").sideNav();
 })
 
-app.directive("showOnLoad", function() {
-    return {
-        link: function(scope, element) {
-            element.on("load", function() {
-                scope.$apply(function() {
-                    scope.images = true;
-                });
-            });
-        }
-    };
+app.controller('GlobalCtrl', function($scope) {
+    // Event listener for state change.
+    $scope.$on('$stateChangeStart', function(event, toState, toParams) {
+        $scope.bodyClass = toState.name + '-page';
+    });
 });

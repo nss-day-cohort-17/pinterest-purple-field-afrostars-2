@@ -29,11 +29,13 @@ nav .brand-logo img {
 	max-height: 63px;
     display: inline;
     border-radius: 100%;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.7);
 }
 
 nav li a {
     font-size: 20px;
     color: #ccc;
+    text-shadow: 5px 5px 10px rgba(0,0,0,.7)
 }
 
 nav {
@@ -78,10 +80,10 @@ nav {
   opacity: 0;
 }
 .grid.ng-enter {
-  -webkit-transition: all ease 400ms;
-  transition: all ease 400ms;
-  -webkit-transition-delay: 500ms;
-  transition-delay: 500ms;
+  -webkit-transition: all ease 800ms;
+  transition: all ease 800ms;
+  -webkit-transition-delay: 100ms;
+  transition-delay: 200ms;
   -webkit-transform: scale(0.5);
    transform: scale(0.5);
   opacity: 0;
