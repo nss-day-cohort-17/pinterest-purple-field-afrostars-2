@@ -28,9 +28,21 @@ nav form {
 nav .brand-logo img {
 	max-height: 63px;
     display: inline;
+    border-radius: 100%;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.7);
 }
 
+nav li a {
+    font-size: 20px;
+    color: #ccc;
+    text-shadow: 5px 5px 10px rgba(0,0,0,.7)
+}
 
+nav {
+    font-family: 'Maven Pro', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 #logoText {
     font-size: 40px;
@@ -40,6 +52,59 @@ nav .brand-logo img {
 /*****************************************
 		Main Page and Search Layout
 ******************************************/
+
+.dynamic-grid {
+  position: relative;
+  display: none;
+}
+.dynamic-grid.angular-grid {
+  display: block;
+}
+.grid {
+  position: absolute;
+  list-style: none;
+  background: #ffffff;;
+  box-sizing: border-box;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.grid.ng-leave {
+  -webkit-transition: all ease 400ms;
+  transition: all ease 400ms;
+}
+.grid.ng-leave.ng-leave-active {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0;
+}
+.grid.ng-enter {
+  -webkit-transition: all ease 800ms;
+  transition: all ease 800ms;
+  -webkit-transition-delay: 100ms;
+  transition-delay: 200ms;
+  -webkit-transform: scale(0.5);
+   transform: scale(0.5);
+  opacity: 0;
+}
+.grid.ng-enter.ng-enter-active {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.grid-img {
+  width: 100%;
+  vertical-align: middle;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+}
+.grid-img.img-loaded {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 .grid {
     border: 1px solid #cccccc;
@@ -72,7 +137,7 @@ nav .brand-logo img {
 }
 
 .show-image:hover img {
-    opacity:0.8;
+    opacity:0.7;
 }
 
 .show-image:hover .btn {
@@ -87,11 +152,13 @@ nav .brand-logo img {
     background-color: maroon;
 }
 
+.modal .btn {
+      background-color: maroon;
+}
+
 .maroon {
     background-color: maroon;
 }
-
-
 
 /*****************************************
               Boards Layout
@@ -148,6 +215,7 @@ nav .brand-logo img {
     width: 100%;
     height: 50px;
 }
+
 
 .modal button {
     display: none;
