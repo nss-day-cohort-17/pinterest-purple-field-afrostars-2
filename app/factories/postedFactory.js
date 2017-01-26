@@ -16,10 +16,12 @@
 //********************************************************
 
 
-app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
+app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactory, $http) {
   return {
     getPersonalBoard : () => {
       var arraything = [];
+      var pinUid
+      var pinLink = [];
 
       return userBoardsFactory.getBoards()
       .then((val) =>{
@@ -64,23 +66,76 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, $http) {
             console.log(arraything)
           }
         })
-        return arraything
+        // return arraything //got this part to work
+        console.log("fine")
+        console.log(arraything)
+
+        return pinFactory.getPins()
+        .then((val) =>{
+          console.log("working")
+          pindata = val
+          console.log("here is a thing")
+          console.log(pindata)
+          // console.log(pindata.value)
+          // angular.forEach(pindata, function() {
+          //   this.push(pindata);
+          // }, pinLink);
+          // console.log(pinLink)
+
+
+          // angular.forEach(pindata, function(value, key) {
+          //   pinUid = value
+          //   console.log("righty ho")
+          //   console.log(pinUid)
+          // })
+          // return pindata
+          console.log("Dogs and cats")
+          console.log(arraything)
+          var pinKey
+          angular.forEach(pindata, function(value, key) {
+            currentPin = value
+            pinKey = key
+            // console.log(key)
+            // console.log(currentPin.url)
+            for ( var i = 0; i < arraything.length; i++) {
+              // console.log("this is from the array")
+              // console.log(arraything[i])
+              if ( arraything[i] == pinKey) {
+                console.log("this is the right pin match")
+              }
+            }
+          })
+
+
+        })
       })
-    }
+    }//, //for getPersonalBoard
+
+    // getPins : () => {  //Keep this around for if I need to use a second call
+
+
+
+      // return pinFactory.getPins()
+      // .then((val) =>{
+      //   console.log("working")
+      //   pindata = val
+      //   console.log("here is a thing")
+      //   console.log(pindata)
+        // console.log(pindata.value)
+        // angular.forEach(pindata, function() {
+        //   this.push(pindata);
+        // }, pinLink);
+        // console.log(pinLink)
+
+        // return pindata
+      // })
+    // } //for the getPins
 
 
 
 
+  }//return for all things
 
-
-
-
-
-          
-  }
-  console.log(arraything)
-
-  // console.log(pinNumber.pin_id)
   // return getPersonalBoard();
 })
 
