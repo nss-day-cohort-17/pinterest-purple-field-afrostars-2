@@ -8,6 +8,9 @@ app.factory('AuthFactory', function($q) {
 		},
 		signOut() {
 			return $q.resolve(firebase.auth().signOut())
+		},
+		getUid() {
+			return firebase.auth().currentUser.uid
 		}
 	}
 })

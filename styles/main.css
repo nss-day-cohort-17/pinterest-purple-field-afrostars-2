@@ -160,16 +160,13 @@ nav {
     background-color: maroon;
 }
 
-.modal {
-  background-color: ;
-}
-
 /*****************************************
               Boards Layout
 ******************************************/
 
-.board-card-wrapper {
-
+.board-card-wrapper p {
+    text-decoration: none;
+    color: black;
 }
 
 .board-card {
