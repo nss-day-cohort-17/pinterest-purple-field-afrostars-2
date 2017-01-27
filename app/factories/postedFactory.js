@@ -16,7 +16,7 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
         // console.log("ran getBoards")
         // console.log(val)
         boarddata = val
-        console.log(boarddata)
+        // console.log(boarddata)
         // console.log("more stuff")
         name = $routeParams.boardName //saves the name of the board
 
@@ -32,8 +32,6 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
           boardPins = result[key].pins
           boardTitle = result[key].title
           if( boardTitle == name) {
-
-
             var picture
 
             angular.forEach(boardPins, function(pinNumber, pinId) {
@@ -43,16 +41,16 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
             }, arraything);
           }
         })
-        console.log("fine")
-        console.log(arraything)
+        // console.log("fine")
+        // console.log(arraything)
 
         return pinFactory.getPins()
         .then((val) =>{
-          console.log("working")
+          // console.log("working")
           pindata = val
-          console.log("here is a thing")
+          // console.log("here is a thing")
           // console.log(pindata)
-          console.log("Dogs and cats")
+          // console.log("Dogs and cats")
           // console.log(arraything)
           var pinKey
           angular.forEach(pindata, function(value, key) {
@@ -64,7 +62,7 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
               // console.log("this is from the array")
               // console.log(arraything[i])
               if ( arraything[i] == pinKey) {
-                console.log("john the coward")
+                // console.log("john the coward")
                 properUrl = currentPin.url
                 pinLink.push(properUrl);
               }
@@ -88,8 +86,8 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
         }
       })
     },
-    getBoardId() {
-      return boardId
+    getBoardId(boardName) {
+      return $http.get(`https://pinterestclone-24ce7.firebaseio.com/boards.json?orderBy="title"&equalTo="${boardName}"`)
     },
     setBoardId(key) {
         boardId = key

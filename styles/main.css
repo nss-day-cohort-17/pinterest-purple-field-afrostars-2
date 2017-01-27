@@ -1,6 +1,9 @@
 /*****************************************
              Generic Styles
 ******************************************/
+li {
+  list-style: none;
+}
 
 .pin-red {
     background-color: #bd081c;

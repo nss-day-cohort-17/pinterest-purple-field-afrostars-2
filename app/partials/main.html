@@ -24,7 +24,7 @@
           <li ng-repeat="(board_id, board) in userBoards">
             <div class="board-link">
             <h6 class="left">{{board.title}}</h6>
-            <button class="waves-effect btn right" ng-click="addPin(board_id, images[getIndex()].pin_id)">Save</button>
+            <button class="waves-effect modal-action modal-close btn right" ng-click="addPin(board_id, images[getIndex()].pin_id)">Save</button>
             </div>
           </li>
         </ul>

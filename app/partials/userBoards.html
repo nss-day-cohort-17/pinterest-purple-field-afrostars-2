@@ -9,14 +9,16 @@
             </div>
           </div>
         </article>
-        <p>New Board</p>
+        <a class="btn red darken-3">New Board</a>
       </a>
     </li>
     <li ng-repeat="(key, board) in userBoards" class="col s12 m6 l4">
       <article class="board-card overflow-hidden">
         <div class="pin-pallette overflow-hidden pallete-flexer">
-          <div class="overflow-hidden pin-thumb-wrap" ng-repeat="boardPins in board.pins">
-            <img ng-repeat="(pinKey, pinValue) in pins" src={{pinValue.url}} class="pin-thumb" ng-if="pinKey === boardPins.pin_id">
+          <div class="dynamic-grid" angular-grid="board.pins" ag-grid-width="70" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="true">
+            <div class="overflow-hidden pin-thumb-wrap" ng-repeat="boardPins in board.pins">
+              <img ng-repeat="(pinKey, pinValue) in pins" src={{pinValue.url}} class="grid-img ng-cloak pin-thumb" ng-if="pinKey === boardPins.pin_id">
+            </div>
           </div>
         </div>
       </article>
