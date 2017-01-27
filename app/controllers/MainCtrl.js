@@ -10,21 +10,20 @@ app.controller('MainCtrl', function($scope, $http, $routeParams, modalFactory, u
 			i++
 		}
 		$scope.images = images
-		console.dir($scope.images)
 	})
 
-	$scope.myFunction = function() {console.log(AuthFactory.getUid())}
+
 
 	$scope.setIndex = modalFactory.setIndex
 	$scope.getIndex = modalFactory.getIndex
 	userBoardsFactory
 		.getBoards()
 		.then((returnVal) => {$scope.boards = returnVal})
-		.then(console.log('boards loaded'))
+
 	userBoardsFactory
 		.getBoardsByUid($rootScope.uid)
 		.then((returnVal) => {$scope.userBoards = returnVal})
-		.then(console.log('user boards loaded'))
+
 
 		// $('.dynamic-grid').hide()
 		// setTimeout(function() {
