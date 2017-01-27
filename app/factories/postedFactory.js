@@ -16,7 +16,7 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
         // console.log("ran getBoards")
         // console.log(val)
         boarddata = val
-        console.log(boarddata)
+        // console.log(boarddata)
         // console.log("more stuff")
         name = $routeParams.boardName //saves the name of the board
 
@@ -26,7 +26,7 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
 
         angular.forEach(boarddata, function(value, key) {
           result[key] = value;
-          console.log("this is a key" + key)
+          // console.log("this is a key" + key)
           // console.log("this is a value" + value)
           // console.log("this is result[key]" + result[key])
           boardPins = result[key].pins
@@ -86,8 +86,8 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
         }
       })
     },
-    getBoardId() {
-      return boardId
+    getBoardId(boardName) {
+      return $http.get(`https://pinterestclone-24ce7.firebaseio.com/boards.json?orderBy="title"&equalTo="${boardName}"`)
     },
     setBoardId(key) {
         boardId = key

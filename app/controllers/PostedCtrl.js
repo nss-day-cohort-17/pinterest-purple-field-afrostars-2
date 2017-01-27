@@ -1,21 +1,22 @@
 
 app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory) {
-  $scope.boardId = postedFactory.getBoardId()
+  postedFactory.getBoardId($routeParams.boardName).then(function(val) {
+    $scope.boardId = Object.keys(val.data)
+    console.log($scope.boardId)
+  })
   // console.log($scope.boardId)
   $scope.tags = [];
   $scope.pinBoard = $routeParams.boardName
   postedFactory.getPersonalBoard()
   .then(function(val) {
     $scope.personalBoard = val
-    console.log(val)
+    // console.log(val)
   })
-
-  // console.log(arraything)
 
   $scope.postNewPin = function() {
     $scope.personalBoard.push($scope.pinUrl)
       postedFactory.postNewPin($scope.tags, $scope.pinUrl).then(function(response) {
-        console.log(response)
+        // console.log(response)
         $http({
           method : 'POST',
           url : `https://pinterestclone-24ce7.firebaseio.com/boards/${$scope.boardId}/pins.json`,
