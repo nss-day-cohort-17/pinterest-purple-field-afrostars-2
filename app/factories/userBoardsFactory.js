@@ -3,7 +3,6 @@ app.factory('userBoardsFactory', function($http, $q) {
     getBoards : () => {
       return $http.get('https://pinterestclone-24ce7.firebaseio.com/boards.json')
       .then((value) => {
-        // console.log(value)
         return value.data
       })
     },

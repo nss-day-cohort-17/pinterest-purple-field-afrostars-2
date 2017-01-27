@@ -6,7 +6,6 @@ app.controller('LoginCtrl', function($scope, $location, AuthFactory) {
 
   $scope.logIn = function() {
   	AuthFactory.signIn($scope.email, $scope.password)
-      .then(() => console.log('uid is: ' + AuthFactory.getUid()))
       .then(function() {
         $location.url('/')
       })
@@ -14,9 +13,7 @@ app.controller('LoginCtrl', function($scope, $location, AuthFactory) {
 
   $scope.register = function() {
     AuthFactory.newUser($scope.email, $scope.password)
-      .then(() => console.log('uid is: ' + AuthFactory.getUid()))
       .then(function() {
-        console.log('Posting user to firebase')
         AuthFactory.postUser($scope.email, AuthFactory.getUid())
       })
       .then(function() {
@@ -24,9 +21,6 @@ app.controller('LoginCtrl', function($scope, $location, AuthFactory) {
       })
  }
  $scope.logOut = function() {
-    AuthFactory.signOut().then(function(){
-      console.log(firebase.auth().currentUser)
-    })
-    .then(() => console.log('uid is: ' + AuthFactory.getUid()))
+    AuthFactory.signOut()
  	}
 })

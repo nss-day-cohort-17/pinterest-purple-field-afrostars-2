@@ -13,12 +13,12 @@ firebase.initializeApp(config);
         const authReady = firebase.auth().onAuthStateChanged(user => {
           authReady()
           if (!user) {
-          	console.log('User signed out.  $rootScope.uid is ' + $rootScope.uid)
+
             $location.url('/login')
           }
           else {
           	$rootScope.uid = firebase.auth().currentUser.uid
-          	console.log('User signed in.  $rootScope.uid is ' + $rootScope.uid)
+
           }
         })
       }
