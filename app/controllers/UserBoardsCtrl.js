@@ -1,5 +1,3 @@
-
-
 app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, postedFactory, AuthFactory, $rootScope) {
   console.log('UserBoardsCtrl root scope uid is ' +$rootScope.uid)
   userBoardsFactory.getBoardsAndPins()

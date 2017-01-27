@@ -1,5 +1,6 @@
 
 <div class="container">
+  <h1>{{ pinBoard }}</h1>
   <ul class="row board-card-wrapper">
     <li class="col s12 m6 l4" ng-click="openNewPinModal()">
       <a href="">
@@ -12,6 +13,9 @@
         </article>
         <p>Save Pin</p>
       </a>
+    </li>
+    <li ng-repeat="pins in personalBoard">
+      <img src="{{ pins }}">
     </li>
   </ul>
 </div>
@@ -35,14 +39,8 @@
     <a class="btn red modal-close modal-action" ng-click="postNewPin()">Upload Pin</a>
   </div>
 </div>
-<div>
-  <ul class="container row">
-    <li><p>hello</p></li>
-    <li><p>{{pinBoard}}</p></li>
+<!-- <div >
+  <ul class="row">
+    <li><p>{{ pinBoard }}</p></li>
   </ul>
-  <ul>
-    <li ng-repeat="pins in personalBoard">
-      <img src="{{pins}}"></li>
-    </ul>
-
-</div>
+</div> -->
