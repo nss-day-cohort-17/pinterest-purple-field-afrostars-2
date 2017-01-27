@@ -4,7 +4,6 @@ app.controller('UserBoardsCtrl', function($scope, userBoardsFactory, $location, 
   .then((boardsAndPins) => {
     $scope.boards = boardsAndPins[0].data
     $scope.pins = boardsAndPins[1].data
-
   })
   
   $scope.logUid = function() {console.log($rootScope.uid)}
