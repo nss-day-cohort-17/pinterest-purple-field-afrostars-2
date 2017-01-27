@@ -1,18 +1,19 @@
 
 app.controller('PostedCtrl', function($scope, $http, $routeParams, postedFactory) {
   $scope.boardId = postedFactory.getBoardId()
-  console.log($scope.boardId)
+  // console.log($scope.boardId)
   $scope.tags = [];
   $scope.pinBoard = $routeParams.boardName
   postedFactory.getPersonalBoard()
   .then(function(val) {
     $scope.personalBoard = val
-
+    console.log(val)
   })
 
   // console.log(arraything)
 
   $scope.postNewPin = function() {
+    $scope.personalBoard.push($scope.pinUrl)
       postedFactory.postNewPin($scope.tags, $scope.pinUrl).then(function(response) {
         console.log(response)
         $http({

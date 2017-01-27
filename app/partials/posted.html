@@ -11,10 +11,16 @@
             </div>
           </div>
         </article>
-        <p>Save Pin</p>
+        <a class="btn red darken-3">Save Pin</a>
       </a>
     </li>
-    <li ng-repeat="pins in personalBoard">
+    </ul>
+    <div class="dynamic-grid" angular-grid="personalBoard" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="true">
+    <div ng-enter class="show-image" ng-repeat="pins in personalBoard" show-on-load>
+      <a href=""><img src="{{ pins }}" class="grid-img ng-cloak"  data-actual-width = "{{pins.actualWidth}}"  data-actual-height="{{pins.actualHeight}}"></a>
+    </div>
+  </div>
+    <li >
       <img src="{{ pins }}">
     </li>
   </ul>
@@ -25,6 +31,7 @@
 <div id="new-pin-modal" class="modal">
   <div class="modal-content">
     <h4 class="center-align">Upload Pin From the Web</h4>
+    <img ng-if="pinUrl" src="{{ pinUrl }}">
     <div class="input-field">
       <input id="pin-name" type="text" class="validate" placeholder="Pin Image Address" ng-model="pinUrl">
       <input id="new-pin-tag" type="text" class="validate" placeholder="Tag the Image" ng-model="tagName">

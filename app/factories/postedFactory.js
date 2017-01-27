@@ -26,14 +26,12 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
 
         angular.forEach(boarddata, function(value, key) {
           result[key] = value;
-          // console.log("this is a key" + key)
+          console.log("this is a key" + key)
           // console.log("this is a value" + value)
           // console.log("this is result[key]" + result[key])
           boardPins = result[key].pins
           boardTitle = result[key].title
           if( boardTitle == name) {
-
-
             var picture
 
             angular.forEach(boardPins, function(pinNumber, pinId) {
@@ -43,16 +41,16 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
             }, arraything);
           }
         })
-        console.log("fine")
-        console.log(arraything)
+        // console.log("fine")
+        // console.log(arraything)
 
         return pinFactory.getPins()
         .then((val) =>{
-          console.log("working")
+          // console.log("working")
           pindata = val
-          console.log("here is a thing")
+          // console.log("here is a thing")
           // console.log(pindata)
-          console.log("Dogs and cats")
+          // console.log("Dogs and cats")
           // console.log(arraything)
           var pinKey
           angular.forEach(pindata, function(value, key) {
@@ -64,7 +62,7 @@ app.factory('postedFactory', function($routeParams, userBoardsFactory, pinFactor
               // console.log("this is from the array")
               // console.log(arraything[i])
               if ( arraything[i] == pinKey) {
-                console.log("john the coward")
+                // console.log("john the coward")
                 properUrl = currentPin.url
                 pinLink.push(properUrl);
               }
