@@ -1,0 +1,42 @@
+<div class="container">
+  <ul class="row board-card-wrapper">
+    <li class="col s12 m6 l4" ng-click="openNewBoardModal()">
+      <a href="">
+        <article class="board-card">
+          <div class="pin-pallette new-board-pallette">
+            <div class="circle pin-red new-board-circle">
+              <img src="/img/add.png" class="add">
+            </div>
+          </div>
+        </article>
+        <a class="btn red darken-3">New Board</a>
+      </a>
+    </li>
+    <li ng-repeat="(key, board) in userBoards" class="col s12 m6 l4">
+      <article class="board-card overflow-hidden">
+        <div class="pin-pallette overflow-hidden pallete-flexer">
+          <div class="dynamic-grid" angular-grid="board.pins" ag-grid-width="70" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="true">
+            <div class="overflow-hidden pin-thumb-wrap" ng-repeat="boardPins in board.pins">
+              <img ng-repeat="(pinKey, pinValue) in pins" src={{pinValue.url}} class="grid-img ng-cloak pin-thumb" ng-if="pinKey === boardPins.pin_id">
+            </div>
+          </div>
+        </div>
+      </article>
+      <p><a ng-click="setBoardId(key)" href="#/user/{{board.title}}">{{board.title}}</a></p>
+    </li>
+  </ul>
+</div>
+
+<div id="new-board-modal" class="modal">
+  <div class="modal-content">
+    <h4 class="center-align">New Board</h4>
+    <div class="input-field">
+      <input id="board-name" type="text" class="validate" ng-model="boardName">
+      <label for="board-name">Board Name</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    <a class="btn red modal-close modal-action" ng-click="addBoard(boardName)">Add Board</a>
+  </div>
+</div>
